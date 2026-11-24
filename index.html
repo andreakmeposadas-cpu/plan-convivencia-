@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan Diario - Colegio Montano</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        montanoBlue: '#1269A8',
+                        montanoYellow: '#F7D615',
+                        montanoGreen: '#54887D',
+                        montanoLightBlue: '#88B5C7',
+                        montanoOlive: '#A6B046',
+                        montanoBg: '#F2F5E9',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #F2F5E9;
+        }
+    </style>
+</head>
+<body class="bg-[#F2F5E9] min-h-screen flex flex-col text-slate-800">
+
+    <!-- Header Institucional con Botón de Pantalla Completa -->
+    <header class="bg-montanoBlue text-white shadow-md py-4 px-6 flex flex-wrap justify-between items-center">
+        <div class="flex items-center space-x-4">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyEop0yf6lZ7Jk9MILZxF1rBj4Oqs5esyhIQ&s" onerror="this.src='https://placehold.co/48x48/ffffff/1269A8?text=CM'" alt="Logo Colegio Montano" class="h-12 w-12 rounded-full object-cover bg-white p-1 shadow">
+            <div>
+                <h1 class="text-xl font-bold">Colegio Montano - Pizarra Digital Interactiva</h1>
+                <p class="text-xs text-montanoLightBlue">Formando líderes con propósito y valores | Duración: 50 minutos</p>
+            </div>
+        </div>
+        <div class="mt-2 sm:mt-0 flex items-center space-x-3">
+            <button onclick="toggleFullscreen()" class="bg-montanoYellow text-slate-900 font-semibold px-4 py-2 rounded-lg shadow hover:bg-yellow-400 transition flex items-center space-x-2 text-sm cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+                </svg>
+                <span>Pantalla Completa</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Barra de Metadatos del Plan -->
+    <section class="bg-white border-b border-slate-200 px-6 py-3 shadow-sm">
+        <div class="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3 text-xs sm:text-sm">
+            <div><span class="font-semibold text-montanoBlue">Curso:</span> Ciencias Sociales</div>
+            <div class="col-span-2"><span class="font-semibold text-montanoBlue">Tema:</span> Convivencia pacífica</div>
+            <div><span class="font-semibold text-montanoBlue">Grado:</span> 4to Primaria</div>
+            <div><span class="font-semibold text-montanoBlue">Unidad:</span> Unidad 1</div>
+            <div><span class="font-semibold text-montanoBlue">Plan N°:</span> 9</div>
+            <div><span class="font-semibold text-montanoBlue">Fecha:</span> Enero 2027</div>
+            <div><span class="font-semibold text-montanoBlue">Docente:</span> Andrea Aguilar</div>
+        </div>
+    </section>
+
+    <!-- Componente Principal / Pestañas de Navegación -->
+    <main class="flex-grow max-w-7xl w-full mx-auto p-4 sm:p-6 flex flex-col">
+        
+        <!-- Tarjeta de Resumen Curricular, Hábito Montano y Recursos -->
+        <div class="bg-white rounded-xl shadow-md p-5 mb-6 border-l-8 border-montanoGreen">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div>
+                    <h2 class="text-sm font-bold text-montanoGreen uppercase tracking-wide mb-1">Competencia y Logro (CNB Guatemala)</h2>
+                    <p class="text-xs sm:text-sm text-slate-700"><strong>Competencia:</strong> Practica valores y normas de convivencia pacífica mediante el diálogo y la resolución constructiva de conflictos en su entorno.<br><strong>Logro Observable:</strong> Aplica estrategias de comunicación asertiva y negociación (ganar-ganar) ante desacuerdos cotidianos en el aula y la familia.</p>
+                </div>
+                <div>
+                    <h2 class="text-sm font-bold text-montanoOlive uppercase tracking-wide mb-1">Modelo Formativo & Hábito Montano</h2>
+                    <p class="text-xs sm:text-sm text-slate-700"><strong>Hábitos:</strong> <span class="text-montanoBlue font-semibold">"Buscar primero entender, luego ser entendido"</span> y <span class="text-montanoBlue font-semibold">"Pensar ganar-ganar"</span>.<br><strong>Competencias clave:</strong> Inteligencia emocional, empatía, escucha activa, toma de decisiones y resolución pacífica de conflictos.</p>
+                </div>
+                <div>
+                    <h2 class="text-sm font-bold text-montanoBlue uppercase tracking-wide mb-1">Evaluación y Recursos (50 min)</h2>
+                    <p class="text-xs sm:text-sm text-slate-700"><strong>Momentos:</strong> Inicial (semáforo emocional), Formativa (ruta del diálogo y dramatización/guía de conflictos) y Sumativa (lista de cotejo).<br><strong>Recursos:</strong> Tarjetas del semáforo, cuaderno, hojas de situaciones de conflicto, marcadores y pizarra digital.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Botones de Navegación de la Secuencia Didáctica (Distribución exacta: 5 + 15 + 20 + 10 = 50 min) -->
+        <div class="flex flex-wrap gap-2 mb-6 justify-center">
+            <button onclick="switchTab('tab1')" id="btn-tab1" class="tab-btn px-5 py-3 rounded-xl font-bold text-sm shadow transition bg-montanoBlue text-white flex items-center space-x-2 cursor-pointer">
+                <span>I) Introducción (5 min)</span>
+            </button>
+            <button onclick="switchTab('tab2')" id="btn-tab2" class="tab-btn px-5 py-3 rounded-xl font-bold text-sm shadow transition bg-white text-slate-700 hover:bg-slate-100 flex items-center space-x-2 cursor-pointer">
+                <span>II) Trabajo Individual (15 min)</span>
+            </button>
+            <button onclick="switchTab('tab3')" id="btn-tab3" class="tab-btn px-5 py-3 rounded-xl font-bold text-sm shadow transition bg-white text-slate-700 hover:bg-slate-100 flex items-center space-x-2 cursor-pointer">
+                <span>III) Trabajo Cooperativo (20 min)</span>
+            </button>
+            <button onclick="switchTab('tab4')" id="btn-tab4" class="tab-btn px-5 py-3 rounded-xl font-bold text-sm shadow transition bg-white text-slate-700 hover:bg-slate-100 flex items-center space-x-2 cursor-pointer">
+                <span>IV) Plenaria y Cierre (10 min)</span>
+            </button>
+        </div>
+
+        <!-- CONTENIDOS DE LAS PESTAÑAS -->
+
+        <!-- PESTAÑA 1 -->
+        <div id="tab1" class="tab-content bg-white rounded-2xl shadow-lg p-6 border border-slate-100 flex flex-col space-y-4">
+            <div class="flex items-center space-x-3 border-b pb-3">
+                <div class="bg-montanoBlue text-white p-3 rounded-xl text-xl font-bold">I</div>
+                <div>
+                    <h3 class="text-lg font-bold text-montanoBlue">Introducción Motivante (5 minutos)</h3>
+                    <p class="text-sm text-slate-500">Activación de conocimientos previos: "El Semáforo de la Calma"</p>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-2">
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                    <h4 class="font-bold text-montanoGreen mb-2">Dinámica Rápida: "Detente, Piensa y Actúa"</h4>
+                    <p class="text-sm text-slate-700 mb-3">La docente Andrea Aguilar proyecta un semáforo y plantea una situación breve: <em>"Dos compañeros quieren usar el mismo balón en el recreo y empiezan a discutir"</em>:</p>
+                    <ul class="list-disc list-inside text-sm text-slate-700 space-y-1">
+                        <li><strong>Rojo (Detenerse):</strong> Respirar profundo antes de gritar o enojarse.</li>
+                        <li><strong>Amarillo (Pensar):</strong> Escuchar lo que el otro necesita.</li>
+                        <li><strong>Verde (Actuar en paz):</strong> Proponer un acuerdo justo para ambos.</li>
+                    </ul>
+                </div>
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 flex flex-col justify-between">
+                    <div>
+                        <h4 class="font-bold text-montanoBlue mb-2">Preguntas exploratorias (Evaluación Diagnóstica)</h4>
+                        <p class="text-sm text-slate-700 mb-2">1. ¿Es normal tener desacuerdos o diferencias con nuestros amigos o familiares? ¿Por qué?</p>
+                        <p class="text-sm text-slate-700 mb-2">2. ¿Cuál es la diferencia entre tener un conflicto y usar la violencia?</p>
+                    </div>
+                    <div class="mt-4 p-3 bg-montanoLightBlue/20 rounded-lg text-xs text-slate-700">
+                        <strong>Conexión Hábito Montano:</strong> Practicar <span class="font-semibold text-montanoBlue">"Buscar primero entender, luego ser entendido"</span>: escuchar con los oídos, los ojos y el corazón antes de responder.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PESTAÑA 2 -->
+        <div id="tab2" class="tab-content hidden bg-white rounded-2xl shadow-lg p-6 border border-slate-100 flex flex-col space-y-4">
+            <div class="flex items-center space-x-3 border-b pb-3">
+                <div class="bg-montanoBlue text-white p-3 rounded-xl text-xl font-bold">II</div>
+                <div>
+                    <h3 class="text-lg font-bold text-montanoBlue">Trabajo Individual (15 minutos)</h3>
+                    <p class="text-sm text-slate-500">Transformando palabras que hieren en comunicación asertiva</p>
+                </div>
+            </div>
+            <div class="space-y-4 mt-2">
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                    <h4 class="font-bold text-montanoGreen mb-2">Actividad: "El Traductor de la Paz"</h4>
+                    <p class="text-sm text-slate-700 mb-3">En su cuaderno de Ciencias Sociales, cada estudiante copia las siguientes frases conflictivas y las reescribe usando <strong>mensajes en primera persona ("Yo siento... necesito...")</strong>:</p>
+                    <ol class="list-decimal list-inside text-sm text-slate-700 space-y-2 mb-4">
+                        <li><strong>Frase 1:</strong> <em>"¡Tú siempre me quitas mis marcadores sin permiso!"</em> → Reescribir con respeto.</li>
+                        <li><strong>Frase 2:</strong> <em>"¡No quiero trabajar contigo porque nunca haces nada!"</em> → Reescribir buscando cooperación.</li>
+                        <li><strong>Compromiso personal:</strong> Dibuja y escribe 3 normas de oro que practicarás esta semana para mantener la armonía en el aula.</li>
+                    </ol>
+
+                    <!-- Acordeón desplegable con orientación oculta -->
+                    <div class="border border-slate-300 rounded-lg overflow-hidden mt-4">
+                        <button onclick="toggleAccordion('solution-guide')" class="w-full bg-slate-200 px-4 py-2 text-left font-semibold text-slate-700 flex justify-between items-center text-sm cursor-pointer hover:bg-slate-300 transition">
+                            <span>💡 Ver Guía de Apoyo: Ejemplos de Comunicación Asertiva (Autoevaluación)</span>
+                            <span id="icon-solution-guide">▼</span>
+                        </button>
+                        <div id="solution-guide" class="hidden p-4 bg-white text-sm text-slate-700 space-y-2 border-t border-slate-300">
+                            <p><strong>Compara tus respuestas con estos modelos de comunicación pacífica:</strong></p>
+                            <ul class="list-disc list-inside space-y-1 text-xs sm:text-sm">
+                                <li><strong>Frase 1 (Asertiva):</strong> "Me molesta cuando toman mis marcadores sin avisar; por favor, pídemelos antes y con gusto te los presto."</li>
+                                <li><strong>Frase 2 (Asertiva):</strong> "Me gustaría que organizáramos mejor nuestras tareas del equipo para que ambos podamos aportar ideas."</li>
+                                <li><strong>Recuerda:</strong> La comunicación asertiva defiende nuestros derechos sin agredir ni humillar a los demás.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PESTAÑA 3 -->
+        <div id="tab3" class="tab-content hidden bg-white rounded-2xl shadow-lg p-6 border border-slate-100 flex flex-col space-y-4">
+            <div class="flex items-center space-x-3 border-b pb-3">
+                <div class="bg-montanoBlue text-white p-3 rounded-xl text-xl font-bold">III</div>
+                <div>
+                    <h3 class="text-lg font-bold text-montanoBlue">Trabajo Cooperativo / en Equipo (20 minutos)</h3>
+                    <p class="text-sm text-slate-500">Mediadores Escolares en acción: Resolviendo conflictos con Ganar-Ganar</p>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-2">
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                    <h4 class="font-bold text-montanoGreen mb-2">Organización de Equipos (4 integrantes)</h4>
+                    <p class="text-sm text-slate-700 mb-3">Asignación de roles para aprovechar los 20 minutos:</p>
+                    <ul class="list-disc list-inside text-sm text-slate-700 space-y-1">
+                        <li><strong>Mediador:</strong> Guía los turnos de palabra para que todos opinen con calma.</li>
+                        <li><strong>Analista de Emociones:</strong> Identifica cómo se sienten los involucrados en el caso.</li>
+                        <li><strong>Constructor de Acuerdos:</strong> Redacta la solución Ganar-Ganar propuesta por el grupo.</li>
+                        <li><strong>Vocero:</strong> Presenta el caso y el acuerdo final en la plenaria.</li>
+                    </ul>
+                </div>
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                    <h4 class="font-bold text-montanoOlive mb-2">Producto Concreto: "Ruta de Solución Pacífica"</h4>
+                    <p class="text-sm text-slate-700 mb-2">Cada equipo recibe un caso escolar o familiar (ej. desacuerdo sobre qué juego jugar, ruido excesivo al estudiar, malentendido por un mensaje) y completa su hoja de mediación:</p>
+                    <ol class="list-decimal list-inside text-sm text-slate-700 space-y-1 mb-3">
+                        <li><strong>¿Cuál es el problema real?</strong> Descripción objetiva sin culpar.</li>
+                        <li><strong>¿Qué necesita cada parte?</strong> Escucha empática de ambos lados.</li>
+                        <li><strong>Acuerdo Ganar-Ganar:</strong> Una solución creativa donde ambas partes queden satisfechas.</li>
+                    </ol>
+                    <div class="p-3 bg-montanoYellow/20 rounded-lg text-xs text-slate-800">
+                        <strong>Hábito Sinergizar:</strong> Cuando combinamos ideas diferentes con respeto, encontramos mejores soluciones que trabajando solos.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PESTAÑA 4 -->
+        <div id="tab4" class="tab-content hidden bg-white rounded-2xl shadow-lg p-6 border border-slate-100 flex flex-col space-y-4">
+            <div class="flex items-center space-x-3 border-b pb-3">
+                <div class="bg-montanoBlue text-white p-3 rounded-xl text-xl font-bold">IV</div>
+                <div>
+                    <h3 class="text-lg font-bold text-montanoBlue">Plenaria, Juego Interactivo y Cierre (10 minutos)</h3>
+                    <p class="text-sm text-slate-500">Socialización rápida, Trivia Montano y Lista de Cotejo</p>
+                </div>
+            </div>
+            
+            <!-- Plenaria y Trivia Interactiva -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-2">
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                    <h4 class="font-bold text-montanoBlue mb-2">Plenaria Express (5 minutos)</h4>
+                    <p class="text-sm text-slate-700 mb-3">Los voceros comparten en 45 segundos su acuerdo Ganar-Ganar. Preguntas de cierre guiadas por la docente Andrea Aguilar:</p>
+                    <ul class="list-disc list-inside text-sm text-slate-700 space-y-1">
+                        <li>¿Por qué escuchar antes de hablar evita que un problema pequeño se vuelva grande?</li>
+                        <li>¿Cómo contribuye la convivencia pacífica al bienestar de Guatemala?</li>
+                    </ul>
+                </div>
+
+                <!-- Trivia Interactiva Multi-pregunta -->
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <h4 class="font-bold text-montanoGreen">Trivia Interactiva Montano (5 min)</h4>
+                            <span id="trivia-counter" class="text-xs font-bold bg-montanoBlue text-white px-2 py-1 rounded">Pregunta 1 de 3</span>
+                        </div>
+                        <p id="trivia-question" class="text-sm text-slate-700 font-semibold mb-3">1. ¿Cuál es el primer paso saludable cuando sentimos mucho enojo durante un desacuerdo?</p>
+                        <div id="trivia-options" class="space-y-2">
+                            <button onclick="checkAnswer(0)" class="w-full text-left bg-white p-2 rounded border border-slate-300 hover:bg-slate-100 text-xs sm:text-sm cursor-pointer">A) Detenernos, respirar profundo y calmarnos antes de hablar</button>
+                            <button onclick="checkAnswer(1)" class="w-full text-left bg-white p-2 rounded border border-slate-300 hover:bg-slate-100 text-xs sm:text-sm cursor-pointer">B) Gritar más fuerte para tener la razón</button>
+                            <button onclick="checkAnswer(2)" class="w-full text-left bg-white p-2 rounded border border-slate-300 hover:bg-slate-100 text-xs sm:text-sm cursor-pointer">C) Dejar de hablar para siempre sin explicar qué pasó</button>
+                        </div>
+                    </div>
+                    <div class="mt-3 flex justify-between items-center">
+                        <div id="trivia-feedback" class="text-xs sm:text-sm font-semibold hidden"></div>
+                        <button id="next-trivia-btn" onclick="nextQuestion()" class="hidden bg-montanoOlive text-white px-3 py-1 rounded text-xs font-bold hover:opacity-90 cursor-pointer">Siguiente →</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Instrumento de Evaluación: Lista de Cotejo Interactiva -->
+            <div class="mt-4 bg-slate-50 p-4 rounded-xl border border-slate-200">
+                <div class="flex flex-wrap justify-between items-center mb-3">
+                    <h4 class="font-bold text-montanoOlive">Instrumento de Evaluación Sumativa: Lista de Cotejo para Plenaria</h4>
+                    <span id="score-display" class="text-xs font-bold bg-montanoBlue text-white px-3 py-1 rounded-full">Puntaje Total: 12 / 12 pts</span>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-xs sm:text-sm border-collapse">
+                        <thead>
+                            <tr class="bg-slate-200 text-slate-700">
+                                <th class="p-2 border border-slate-300">Criterio a Evaluar</th>
+                                <th class="p-2 border border-slate-300 text-center">Logrado (3 pts)</th>
+                                <th class="p-2 border border-slate-300 text-center">En Proceso (2 pts)</th>
+                                <th class="p-2 border border-slate-300 text-center">Inicio (1 pt)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="p-2 border border-slate-300 font-medium">1. Dominio del tema y uso de comunicación respetuosa y asertiva</td>
+                                <td class="p-2 border border-slate-300 text-center"><input type="radio" name="crit1" value="3" onchange="updateScore()" checked></td>
+                                <td class="p-2 border border-slate-300 text-center"><input type="radio" name="crit1" value="2" onchange="updateScore()"></td>
+                                <td class="p-2 border border-slate-300 text-center"><input type="radio" name="crit1" value="1" onchange="updateScore()"></td>
+                            </tr>
+                            <tr class="bg-white">
+                                <td class="p-2 border border-slate-300 font-medium">2. Coherencia de la ruta de mediación y propuesta de acuerdo Ganar-Ganar</td>
+                                <td class="p-2 border border-slate-300 text-center"><input type="radio" name="crit2" value="3" onchange="updateScore()" checked></td>
+                                <td class="p-2 border border-slate-300 text-center"><input type="radio" name="crit2" value="2" onchange="updateScore()"></td>
+                                <td class="p-2 border border-slate-300 text-center"><input type="radio" name="crit2" value="1" onchange="updateScore()"></td>
+                            </tr>
+                            <tr>
+                                <td class="p-2 border border-slate-300 font-medium">3. Trabajo colaborativo, escucha activa y equidad en la participación</td>
+                                <td class="p-2 border border-slate-300 text-center"><input type="radio" name="crit3" value="3" onchange="updateScore()" checked></td>
+                                <td class="p-2 border border-slate-300 text-center"><input type="radio" name="crit3" value="2" onchange="updateScore()"></td>
+                                <td class="p-2 border border-slate-300 text-center"><input type="radio" name="crit3" value="1" onchange="updateScore()"></td>
+                            </tr>
+                            <tr class="bg-white">
+                                <td class="p-2 border border-slate-300 font-medium">4. Capacidad de respuesta empática a las preguntas de la plenaria</td>
+                                <td class="p-2 border border-slate-300 text-center"><input type="radio" name="crit4" value="3" onchange="updateScore()" checked></td>
+                                <td class="p-2 border border-slate-300 text-center"><input type="radio" name="crit4" value="2" onchange="updateScore()"></td>
+                                <td class="p-2 border border-slate-300 text-center"><input type="radio" name="crit4" value="1" onchange="updateScore()"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer Institucional -->
+    <footer class="bg-white border-t border-slate-200 py-3 text-center text-xs text-slate-500 mt-6">
+        Colegio Montano © 2027 | Asistente Pedagógico e Interactivo | Currículo Nacional Base (CNB) Guatemala
+    </footer>
+
+    <!-- Scripts de Interactividad -->
+    <script>
+        function switchTab(tabId) {
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => tab.classList.add('hidden'));
+
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-montanoBlue', 'text-white');
+                btn.classList.add('bg-white', 'text-slate-700', 'hover:bg-slate-100');
+            });
+
+            document.getElementById(tabId).classList.remove('hidden');
+
+            const activeBtn = document.getElementById('btn-' + tabId);
+            activeBtn.classList.remove('bg-white', 'text-slate-700', 'hover:bg-slate-100');
+            activeBtn.classList.add('bg-montanoBlue', 'text-white');
+        }
+
+        function toggleAccordion(id) {
+            const element = document.getElementById(id);
+            const icon = document.getElementById('icon-' + id);
+            if (element.classList.contains('hidden')) {
+                element.classList.remove('hidden');
+                icon.textContent = '▲';
+            } else {
+                element.classList.add('hidden');
+                icon.textContent = '▼';
+            }
+        }
+
+        function toggleFullscreen() {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen().catch(err => {
+                    console.error("Error al intentar activar pantalla completa: ", err);
+                });
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                }
+            }
+        }
+
+        // Banco de preguntas para la Trivia de Cierre
+        const triviaData = [
+            {
+                q: "1. ¿Cuál es el primer paso saludable cuando sentimos mucho enojo durante un desacuerdo?",
+                options: [
+                    "A) Detenernos, respirar profundo y calmarnos antes de hablar",
+                    "B) Gritar más fuerte para tener la razón",
+                    "C) Dejar de hablar para siempre sin explicar qué pasó"
+                ],
+                correct: 0,
+                feedback: "¡Excelente! Detenernos a respirar nos ayuda a controlar nuestras emociones y dialogar con respeto."
+            },
+            {
+                q: "2. ¿Qué significa aplicar el hábito 'Pensar ganar-ganar' en un conflicto?",
+                options: [
+                    "A) Que yo gano todo y mi compañero pierde",
+                    "B) Buscar una solución justa donde ambas personas queden satisfechas",
+                    "C) Dejar que otros decidan siempre por nosotros"
+                ],
+                correct: 1,
+                feedback: "¡Correcto! Pensar ganar-ganar fortalece la amistad y construye acuerdos duraderos."
+            },
+            {
+                q: "3. ¿Qué herramienta es clave para resolver conflictos de forma pacífica en la escuela y la sociedad?",
+                options: [
+                    "A) El diálogo respetuoso y la escucha activa",
+                    "B) Ignorar las reglas de convivencia",
+                    "C) Imponer nuestra opinión a la fuerza"
+                ],
+                correct: 0,
+                feedback: "¡Muy bien! El diálogo y la empatía son la base de la cultura de paz en Guatemala."
+            }
+        ];
+
+        let currentQuestion = 0;
+// ... existing code ... -->
